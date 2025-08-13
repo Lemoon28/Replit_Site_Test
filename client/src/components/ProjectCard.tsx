@@ -10,25 +10,7 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
-  const getProjectIcon = (category: string) => {
-    switch (category.toLowerCase()) {
-      case 'web design':
-      case 'e-commerce':
-        return '🛍️';
-      case 'mobile':
-      case 'mobile app':
-      case 'healthcare':
-        return '🏥';
-      case 'brand identity':
-      case 'branding':
-        return '🎨';
-      case 'data visualization':
-      case 'dashboard':
-        return '📊';
-      default:
-        return '💼';
-    }
-  };
+
 
   return (
     <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl project-card overflow-hidden group cursor-pointer" data-testid={`card-project-${project.id}`}>
@@ -40,9 +22,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             className="w-full h-48 object-cover project-image"
             data-testid={`img-project-${project.id}`}
           />
-          <div className="absolute top-4 right-4 bg-yellow-400 w-8 h-8 rounded-full flex items-center justify-center">
-            <span className="text-lg">{getProjectIcon(project.category)}</span>
-          </div>
+
         </div>
         <div className="p-6">
           <div className="flex items-center text-sm text-portfolio-text-light mb-2">
