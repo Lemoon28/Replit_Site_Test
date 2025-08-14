@@ -15,6 +15,10 @@ export default defineConfig({
           ),
         ]
       : []),
+    build: {
+    outDir: "../dist/public", // where to put the final built files
+    emptyOutDir: true         // clear the folder before building
+  }
   ],
   resolve: {
     alias: {
